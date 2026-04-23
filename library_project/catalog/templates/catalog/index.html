@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Kütüphane Sistemi | Migrations Projesi</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .card { background: white; padding: 20px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid #007bff; }
+        .btn { background: #007bff; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>📚 Kütüphane Kitap Listesi</h1>
+    <p>Bu veriler Django Migrasyonları ile yönetilen bir veritabanından gelmektedir.</p>
+    {% for book in books %}
+    <div class="card">
+        <h3>{{ book.title }}</h3>
+        <p>Yazar: {{ book.author.name }}</p>
+        <a href="{% url 'book-detail' book.pk %}" class="btn">Detayları Gör</a>
+    </div>
+    {% endfor %}
+</body>
+</html>

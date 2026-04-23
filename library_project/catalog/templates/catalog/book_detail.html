@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }} - Detay</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; padding: 50px; line-height: 1.6; }
+        .content { max-width: 700px; margin: auto; border: 1px solid #ddd; padding: 30px; border-radius: 15px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .back-link { color: #007bff; text-decoration: none; font-weight: bold; }
+        h1 { color: #333; }
+        .author-box { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <a href="{% url 'index' %}" class="back-link">← Listeye Geri Dön</a>
+        <h1>{{ book.title }}</h1>
+        <p class="author-box">Yazar: {{ book.author.name }}</p>
+        <hr>
+        <h3>Kitap Özeti</h3>
+        <p>{{ book.summary }}</p>
+    </div>
+</body>
+</html>
